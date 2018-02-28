@@ -8,5 +8,6 @@ namespace CPU_Scheduling.Models
 {
     class Obj
     {
+        
     }
 }

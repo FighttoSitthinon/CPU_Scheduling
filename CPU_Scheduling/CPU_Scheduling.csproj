@@ -57,8 +57,7 @@
     <Compile Include="Controllers\FCFS.cs" />
     <Compile Include="Controllers\PS-NP.cs" />
     <Compile Include="Controllers\PS-P.cs" />
-    <Compile Include="Controllers\ReadFile.cs" />
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -70,7 +69,7 @@
     <Compile Include="Controllers\SJF-NP.cs" />
     <Compile Include="Controllers\SJF-P.cs" />
     <Compile Include="Models\Obj.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
+    <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

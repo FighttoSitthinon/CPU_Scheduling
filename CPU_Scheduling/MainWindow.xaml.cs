@@ -24,5 +24,15 @@ namespace CPU_Scheduling
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string url = inputBox.Text;
+            string[] lines = System.IO.File.ReadAllLines(url);
+            foreach (string line in lines)
+            {
+                output.Content += "\n" + line;
+            }
+        }
     }
 }
