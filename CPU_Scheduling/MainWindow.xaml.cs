@@ -25,17 +25,20 @@ namespace CPU_Scheduling
             string[] lines = System.IO.File.ReadAllLines(url);
             string[] word;
             output.Content =  "Process" + "\t" +"Arrive"+ "\t" +"Brust" + "\t" +"Priority" + "\t" +"Quantumm";
-
+            
             foreach (string line in lines)
             {
                 word = line.Split(' ');
                 ObjList.Add(new Obj(word[0], Int32.Parse(word[1]), Int32.Parse(word[2]), Int32.Parse(word[3]), Int32.Parse(word[4]))) ;
             }
-           
             foreach(Obj Obj in ObjList)
             {
                 output.Content += $"\n{Obj.Process}\t{Obj.ArriveTime}\t{Obj.BrustTime}\t{Obj.Priority}\t{Obj.Quantumm}";
             }
+            var instance = new FCFS();
+            output.Content += $"\n\n First Come First Serve : {instance.SortProcess(ObjList)}";
+            
+            
         }
     }
 }

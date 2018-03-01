@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPU_Scheduling"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+        Title="MainWindow" Height="512.667" Width="519">
+    <Grid Background="#FF8BBEB2" Margin="0,0,0,0.333">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
 
         <Button Content="Calculate" 
@@ -14,26 +18,24 @@
                 Margin="407,38,0,0" 
                 VerticalAlignment="Top" 
                 Width="75" 
-                Height="23" Click="Button_Click"/>
+                Height="23" Click="Button_Click" BorderBrush="Transparent" Background="#FFBBDBD1"/>
         <Label Content="Output" 
                HorizontalAlignment="Left" 
                Margin="34,83,0,0" 
-               VerticalAlignment="Top" 
-               Grid.ColumnSpan="2" />
+               VerticalAlignment="Top" Height="26" Width="48" />
         <TextBox x:Name="inputBox" 
                  HorizontalAlignment="Left" 
                  Height="23" 
                  Margin="34,38,0,0"
                  TextWrapping="Wrap" Text="Put your url in here." 
                  VerticalAlignment="Top" 
-                 Width="347" 
-                 Grid.ColumnSpan="2"/>
+                 Width="347" BorderBrush="Transparent" Background="#FFD0F4EA"/>
         <Label x:Name="output" 
                HorizontalAlignment="Left" 
                Margin="34,114,0,0" 
                VerticalAlignment="Top" 
-               Height="170" 
-               Width="448"/>
+               Height="340" 
+               Width="448" Background="#FFD0F4EA"/>
 
     </Grid>
 </Window>
