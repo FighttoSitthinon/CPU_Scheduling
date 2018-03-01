@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using CPU_Scheduling.Models;
+using CPU_Scheduling.Controllers;
 
 namespace CPU_Scheduling
 {
@@ -16,25 +17,24 @@ namespace CPU_Scheduling
         public MainWindow()
         {
             InitializeComponent();
-            
         }
-        
+        List<Obj> ObjList = new List<Obj>();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Obj obj = new Obj(null, 0, 0, 0, 0);
             string url = inputBox.Text;
             string[] lines = System.IO.File.ReadAllLines(url);
             string[] word;
-            output.Content = "Process" + "\t" +"Arrive"+ "\t" +"Brust" + "\t" +"Priority" + "\t" +"Quantumm";
+            output.Content =  "Process" + "\t" +"Arrive"+ "\t" +"Brust" + "\t" +"Priority" + "\t" +"Quantumm";
+
             foreach (string line in lines)
             {
                 word = line.Split(' ');
-                obj.Process = word[0];
-                obj.ArriveTime = Int32.Parse(word[1]);
-                obj.BrustTime = Int32.Parse(word[2]);
-                obj.Priority = Int32.Parse(word[3]);
-                obj.Quantumm = Int32.Parse(word[4]);
-                output.Content +=  "\n" + obj.Process +"\t"+ obj.ArriveTime + "\t" + obj.BrustTime + "\t" + obj.Priority + "\t" + obj.Quantumm ;
+                ObjList.Add(new Obj(word[0], Int32.Parse(word[1]), Int32.Parse(word[2]), Int32.Parse(word[3]), Int32.Parse(word[4]))) ;
+            }
+           
+            foreach(Obj Obj in ObjList)
+            {
+                output.Content += $"\n{Obj.Process}\t{Obj.ArriveTime}\t{Obj.BrustTime}\t{Obj.Priority}\t{Obj.Quantumm}";
             }
         }
     }

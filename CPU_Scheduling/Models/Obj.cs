@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CPU_Scheduling.Models
 {
-    class Obj
+    class Obj 
     {
-
         public Obj(string process, int arriveTime, int brustTime, int priority, int quantumm)
         {
             Process = process;
