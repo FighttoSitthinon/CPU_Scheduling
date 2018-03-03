@@ -9,13 +9,17 @@ namespace CPU_Scheduling.Controllers
 {
     class WT_TAT
     {
-        public int WaittingTime(List<Obj> objList)
+        public double WaittingTime(List<Obj> objList)
         {
-            return 0;
+            double w = 0;
+
+            return w;
         }
-        public int TurnAroundTime(List<Obj> objList)
+        public double TurnAroundTime(List<Obj> objList)
         {
-            return 0;
+            double t = 0;
+
+            return t;
         }
     }
 }
