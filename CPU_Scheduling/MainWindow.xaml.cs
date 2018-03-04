@@ -20,7 +20,7 @@ namespace CPU_Scheduling
             string[] word;
             int totalTime = 0;
             int row = 0;
-            output.Content =  "Process" + "\t" +"Arrive"+ "\t" +"Brust" + "\t" +"Priority" + "\t" +"Quantumm";
+            output.Text =  "Process" + "\t" +"Arrive"+ "\t" +"Brust" + "\t" +"Priority" + "\t" +"Quantumm";
             
             foreach (string line in lines)
             {
@@ -29,16 +29,16 @@ namespace CPU_Scheduling
             }
             foreach(Obj Obj in ObjList)
             {
-                output.Content += $"\n{Obj.Process}\t{Obj.ArriveTime}\t{Obj.BrustTime}\t{Obj.Priority}\t{Obj.Quantumm}";
+                output.Text += $"\n{Obj.Process}\t{Obj.ArriveTime}\t{Obj.BrustTime}\t{Obj.Priority}\t{Obj.Quantumm}";
                 totalTime += Obj.BrustTime;
                 row ++;
             }
             var instance1 = new FCFS();
-            output.Content += $"\n\n First Come First Serve : {instance1.SortProcess(ObjList,row)}";
+            output.Text += $"\n\n First Come First Serve : {instance1.SortProcess(ObjList,row)}";
             var instance2 = new PS_NP();
-            output.Content += $"\n\n Priority Scheduling : {instance2.SortProcess(ObjList,totalTime,row)}";
+            output.Text += $"\n\n Priority Scheduling : {instance2.SortProcess(ObjList,totalTime,row)}";
             var instance3 = new SJF_NP();
-            output.Content += $"\n\n First Job Search : {instance3.SortProcess(ObjList, totalTime, row)}";
+            output.Text += $"\n\n First Job Search : {instance3.SortProcess(ObjList, totalTime, row)}";
 
 
 
