@@ -12,56 +12,63 @@ namespace CPU_Scheduling.Controllers
         public string SortProcess(List<Obj> objList,int totalTime,int row)
         {
             string[] p = new string[row];
+            int[] Btime = new int[row];
             string Output = "\t";
-            int[] priority = new int[row];
+            string Output2 = "\n";
+            double temp = 0;
+            double temp2 = 0;
+            bool key = false;
             int time = 0;
-            int count;
+            int count = 0;
+            double wt = 0;
+            double tat = 0;
             var PriorityList = objList.OrderBy(x=>x.Priority).ToList();
-            //for(int i = 0; i < totalTime;i++ )
-            //{
-            //    int count = 0;
-
-            //    foreach (var x in objList)
-            //    {
-            //        if(x.ArriveTime == i)
-            //        {
-
-            //        }
-            //       count++;
-            //    }
-            //}
-            while (time == totalTime)
+            Output2 += $"\tTime : {time}";
+            int c = 0;
+            foreach (var x in objList)
             {
-                count = 0;
-                foreach (var x in objList)
+                Btime[c] = x.BrustTime;
+                c++;
+            }
+            c = 0;
+            while (time < totalTime)
+            {
+                IEnumerable<Obj> queryArrive =
+                    from t in objList
+                    where t.ArriveTime <= time
+                    select t;//จับส่งไป sort เลือกเอาน้อยสุด พอ p ใหม่เข้ามาเอาที่ยังไม่เลือกไป sort
+                var qPriority = queryArrive.OrderBy(x => x.Priority).ToList();
+
+                foreach (var x in qPriority)
                 {
-                    if (x.ArriveTime <= time)
+                    if (key == false && x.BrustTime != 0)
                     {
-                        foreach (var w in objList)
-                        {
-                            if (x.Priority < w.Priority && x.ArriveTime <= time && w.ArriveTime <= time) {
-                                p[count] = x.Process;
-                                priority[count] = x.Priority;
-                                time += x.BrustTime;
-                            }
-                        }
-                        
+                        p[count] = x.Process;
+                        count++;
+                        temp += time - x.ArriveTime;
+                        time += x.BrustTime;
+                        Output2 += $" - {time}";
+                        temp2 += time - x.ArriveTime;
+                        x.BrustTime = 0;
+                        key = true;
+                        break;
                     }
-                    
                 }
+                key = false;
+            }
+            foreach(var x in objList)
+            {
+                x.BrustTime = Btime[c];
+                c++;
             }
             for (int i = 0; i < row; i++)
             {
-                Output += $"{p[i]},  ";
+                Output += $"{p[i]}, ";
             }
-                
-            return Output ;
+            wt = temp / row;
+            tat = temp2 / row;
+            Output2 += $"\n \tWaitting Time : {wt}\n \tTuranaround Time : {tat}";
+            return Output+Output2 ;
         }
-        //public int recursivePriorityList(<Obj> objList, int totalTime, int row)
-        //{
-
-        //    return 
-        //}
-       
     }
 }

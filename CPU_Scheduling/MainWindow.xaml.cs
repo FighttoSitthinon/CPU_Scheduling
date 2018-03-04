@@ -37,6 +37,8 @@ namespace CPU_Scheduling
             output.Content += $"\n\n First Come First Serve : {instance1.SortProcess(ObjList,row)}";
             var instance2 = new PS_NP();
             output.Content += $"\n\n Priority Scheduling : {instance2.SortProcess(ObjList,totalTime,row)}";
+            var instance3 = new SJF_NP();
+            output.Content += $"\n\n First Job Search : {instance3.SortProcess(ObjList, totalTime, row)}";
 
 
 

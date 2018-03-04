@@ -68,7 +68,6 @@
     <Compile Include="Controllers\RR.cs" />
     <Compile Include="Controllers\SJF-NP.cs" />
     <Compile Include="Controllers\SJF-P.cs" />
-    <Compile Include="Controllers\WT_TAT.cs" />
     <Compile Include="Models\Obj.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
