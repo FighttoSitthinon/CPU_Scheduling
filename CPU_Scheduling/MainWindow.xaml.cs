@@ -29,8 +29,8 @@ namespace CPU_Scheduling
             }
             foreach(Obj Obj in ObjList)
             {
-                output.Text += $"\n{Obj.Process}\t{Obj.ArriveTime}\t{Obj.BrustTime}\t{Obj.Priority}\t{Obj.Quantumm}";
-                totalTime += Obj.BrustTime;
+                output.Text += $"\n{Obj.Process}\t{Obj.ArriveTime}\t{Obj.BurstTime}\t{Obj.Priority}\t{Obj.Quantumm}";
+                totalTime += Obj.BurstTime;
                 row ++;
             }
             var instance1 = new FCFS();

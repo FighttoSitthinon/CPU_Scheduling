@@ -26,7 +26,7 @@ namespace CPU_Scheduling.Controllers
             Output += $"\n \tTime : {start}";
             foreach (var i in List)
             {
-                Output += $" - {end+=i.BrustTime}";
+                Output += $" - {end+=i.BurstTime}";
                 temp2 += end - i.ArriveTime;
                 temp += start - i.ArriveTime;
                 start = end;

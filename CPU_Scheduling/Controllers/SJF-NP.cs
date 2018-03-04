@@ -22,12 +22,12 @@ namespace CPU_Scheduling.Controllers
             int count = 0;
             double wt = 0;
             double tat = 0;
-            var JobList = objList.OrderBy(x => x.BrustTime).ToList();
+            var JobList = objList.OrderBy(x => x.BurstTime).ToList();
             Output2 += $"\tTime : {time}";
             int c = 0;
             foreach (var x in objList)
             {
-                Btime[c] = x.BrustTime;
+                Btime[c] = x.BurstTime;
                 c++;
             }
             c = 0;
@@ -37,19 +37,19 @@ namespace CPU_Scheduling.Controllers
                     from t in objList
                     where t.ArriveTime <= time
                     select t;//จับส่งไป sort เลือกเอาน้อยสุด พอ p ใหม่เข้ามาเอาที่ยังไม่เลือกไป sort
-                var qJob = queryArrive.OrderBy(x => x.BrustTime).ToList();
+                var qJob = queryArrive.OrderBy(x => x.BurstTime).ToList();
 
                 foreach (var x in qJob)
                 {
-                    if (x.BrustTime != 0)
+                    if (x.BurstTime != 0)
                     {
                         p[count] = x.Process;
                         count++;
                         temp += time - x.ArriveTime;
-                        time += x.BrustTime;
+                        time += x.BurstTime;
                         Output2 += $" - {time}";
                         temp2 += time - x.ArriveTime;
-                        x.BrustTime = 0;
+                        x.BurstTime = 0;
                         break;
                     }
                 }
@@ -57,7 +57,7 @@ namespace CPU_Scheduling.Controllers
             }
             foreach (var x in objList)
             {
-                x.BrustTime = Btime[c];
+                x.BurstTime = Btime[c];
                 c++;
             }
             for (int i = 0; i < row; i++)

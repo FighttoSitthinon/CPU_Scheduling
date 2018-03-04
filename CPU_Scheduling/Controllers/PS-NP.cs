@@ -17,7 +17,6 @@ namespace CPU_Scheduling.Controllers
             string Output2 = "\n";
             double temp = 0;
             double temp2 = 0;
-            bool key = false;
             int time = 0;
             int count = 0;
             double wt = 0;
@@ -27,7 +26,7 @@ namespace CPU_Scheduling.Controllers
             int c = 0;
             foreach (var x in objList)
             {
-                Btime[c] = x.BrustTime;
+                Btime[c] = x.BurstTime;
                 c++;
             }
             c = 0;
@@ -41,15 +40,15 @@ namespace CPU_Scheduling.Controllers
 
                 foreach (var x in qPriority)
                 {
-                    if (x.BrustTime != 0)
+                    if (x.BurstTime != 0)
                     {
                         p[count] = x.Process;
                         count++;
                         temp += time - x.ArriveTime;
-                        time += x.BrustTime;
+                        time += x.BurstTime;
                         Output2 += $" - {time}";
                         temp2 += time - x.ArriveTime;
-                        x.BrustTime = 0;
+                        x.BurstTime = 0;
                         break;
                     }
                 }
@@ -57,7 +56,7 @@ namespace CPU_Scheduling.Controllers
             }
             foreach(var x in objList)
             {
-                x.BrustTime = Btime[c];
+                x.BurstTime = Btime[c];
                 c++;
             }
             for (int i = 0; i < row; i++)
