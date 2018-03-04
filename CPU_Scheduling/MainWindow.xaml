@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="CPU_Scheduling" Height="486.067" Width="519" Background="Cyan">
     <Grid Background="#FF8BBEB2" Margin="0,0,0,0.333" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="293*"/>
+            <ColumnDefinition Width="219*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="160*"/>
             <RowDefinition/>
@@ -15,10 +19,21 @@
 
         <Button Content="Calculate" 
                 HorizontalAlignment="Left" 
-                Margin="414,38,0,0" 
+                Margin="121.333,38,0,0" 
                 VerticalAlignment="Top" 
                 Width="75" 
-                Height="23" Click="Button_Click" BorderBrush="Transparent" Background="#FFBBDBD1"/>
+                Height="23" Click="Button_Click" 
+                BorderBrush="Transparent" 
+                Background="#FFBBDBD1" 
+                Grid.Column="1"/>
+        <Button Content="Clear"
+                BorderBrush="Transparent" 
+                Background="#FFBBDBD1" 
+                Width="75" 
+                Height="23" 
+                VerticalAlignment="Top"
+                Grid.Column="1" Margin="120.667,83,23,0"
+                Click="Button_Click_1"></Button>
         <Label Content="Output" 
                HorizontalAlignment="Left" 
                Margin="27,83,0,0" 
@@ -29,17 +44,23 @@
                  Margin="27,38,0,0"
                  TextWrapping="Wrap" Text="Put your url in here." 
                  VerticalAlignment="Top" 
-                 Width="365" BorderBrush="Transparent" Background="#FFD0F4EA"/>
+                 Width="365" BorderBrush="Transparent" Background="#FFD0F4EA" Grid.ColumnSpan="2"/>
         <ScrollViewer 
                   HorizontalScrollBarVisibility="Auto" 
-                  VerticalScrollBarVisibility="Auto" Margin="27,129,23,27">
+                  VerticalScrollBarVisibility="Auto" Margin="27,129,23,27" Grid.ColumnSpan="2">
             <TextBlock x:Name="output" 
                HorizontalAlignment="Left" 
                        Padding="20px"
-               Width="482" Background="#FFD0F4EA"
+               Width="769" Background="#FFD0F4EA"
                TextWrapping="Wrap" Height="1013" VerticalAlignment="Top"
                />
         </ScrollViewer>
+        <Button Content="Calculate" 
+            HorizontalAlignment="Left" 
+            Margin="121.333,38,0,0" 
+            VerticalAlignment="Top" 
+            Width="75" 
+            Height="23" Click="Button_Click" BorderBrush="Transparent" Background="#FFBBDBD1" Grid.Column="1"/>
 
 
     </Grid>

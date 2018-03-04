@@ -39,9 +39,18 @@ namespace CPU_Scheduling
             output.Text += $"\n\n Priority Scheduling : {instance2.SortProcess(ObjList,totalTime,row)}";
             var instance3 = new SJF_NP();
             output.Text += $"\n\n First Job Search : {instance3.SortProcess(ObjList, totalTime, row)}";
+            var instance4 = new RR();
+            output.Text += $"\n\n Round Robin : {instance4.SortProcess(ObjList, totalTime, row)}";
+            var instance5 = new PS_P();
+            output.Text += $"\n\n Priority Scheduling (Preemptive) : ";
+            var instance6 = new SJF_P();
+            output.Text += $"\n\n First Job Search (Preemptive) : ";
+        }
 
-
-
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            output.Text = null;
+            ObjList.Clear();
         }
     }
 }

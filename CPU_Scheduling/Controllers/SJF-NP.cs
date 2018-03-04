@@ -13,7 +13,7 @@ namespace CPU_Scheduling.Controllers
         {
             string[] p = new string[row];
             int[] Btime = new int[row];
-            string Output = "\t";
+            string Output = "\t\t";
             string Output2 = "\n";
             double temp = 0;
             double temp2 = 0;
@@ -41,7 +41,7 @@ namespace CPU_Scheduling.Controllers
 
                 foreach (var x in qJob)
                 {
-                    if (key == false && x.BrustTime != 0)
+                    if (x.BrustTime != 0)
                     {
                         p[count] = x.Process;
                         count++;
@@ -50,7 +50,6 @@ namespace CPU_Scheduling.Controllers
                         Output2 += $" - {time}";
                         temp2 += time - x.ArriveTime;
                         x.BrustTime = 0;
-                        key = true;
                         break;
                     }
                 }
