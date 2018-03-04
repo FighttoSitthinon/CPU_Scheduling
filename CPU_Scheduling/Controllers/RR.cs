@@ -51,6 +51,10 @@ namespace CPU_Scheduling.Controllers
                     timetotal += timeuse;
                   
                 }
+                else{
+                        //ให้เอา process แรกมาต่อ
+
+                }
                 Output += "\t" + newTask.Process + "-" + timetotal;
                 
 
