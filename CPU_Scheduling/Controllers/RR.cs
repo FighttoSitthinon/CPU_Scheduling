@@ -29,21 +29,21 @@ namespace CPU_Scheduling.Controllers
                     if (i.BrustTime == i.Quantumm)
                     {
                         timeuse = i.BrustTime;
-                        newTask.Process += i.Process;
+                        newTask.Process = i.Process;
 
                     }
                     else if (i.BrustTime > i.Quantumm)
                     {
                         timeuse = i.Quantumm;
                         retime = i.BrustTime - i.Quantumm; //timebrust ที่เหลือ
-                        newTask.Process += i.Process;
+                        newTask.Process = i.Process;
 
 
                     }
                     else if (i.BrustTime < i.Quantumm)
                     {
                         timeuse = i.BrustTime;
-                        newTask.Process += i.Process;
+                        newTask.Process = i.Process;
 
 
                     }
