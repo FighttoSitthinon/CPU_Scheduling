@@ -35,7 +35,7 @@ namespace CPU_Scheduling.Controllers
                     else if (i.BrustTime > i.Quantumm)
                     {
                         timeuse = i.Quantumm;
-                        retime = i.BrustTime - i.Quantumm;
+                        retime = i.BrustTime - i.Quantumm; //timebrust ที่เหลือ
                         newTask.Process += i.Process;
 
 
