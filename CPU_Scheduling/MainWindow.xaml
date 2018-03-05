@@ -15,8 +15,6 @@
             <RowDefinition Height="160*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
-
         <Button Content="Calculate" 
                 HorizontalAlignment="Left" 
                 Margin="121.333,38,0,0" 

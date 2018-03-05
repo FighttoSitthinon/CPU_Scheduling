@@ -73,6 +73,7 @@ namespace CPU_Scheduling.Controllers
                                 temp2 += time - w.ArriveTime;
                                 x.ArriveTime = w.ArriveTime;
                                 key = true;
+                                break;
                             }
 
                         }
