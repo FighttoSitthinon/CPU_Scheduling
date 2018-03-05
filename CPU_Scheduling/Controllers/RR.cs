@@ -11,13 +11,13 @@ namespace CPU_Scheduling.Controllers
     {
         public string SortProcess(List<Obj> objList, int totalTime, int row)
         {
+            List<string> p = new List<string>();
             int[] Btime = new int[row];
             string Output = "\t\t";
             string Output2 = "\n";
             double temp = 0;
             double temp2 = 0;
             int time = 0;
-            int count = 0;
             double wt = 0;
             double tat = 0;
             var JobList = objList.OrderBy(x => x.BurstTime).ToList();
@@ -31,7 +31,6 @@ namespace CPU_Scheduling.Controllers
                 c++;
             }
             c = 0;
-            string[] p = new string[tempP];
             //while (time < totalTime)
             //{
             //    IEnumerable<Obj> queryArrive =
@@ -42,7 +41,7 @@ namespace CPU_Scheduling.Controllers
             //    {
             //        if (x.BurstTime != 0)
             //        {
-            //            p[count] = x.Process;
+            //            p.Add(x.Process);
             //            count++;
             //            temp += time - x.ArriveTime;
             //            time += (x.BurstTime - x.Quantumm);
@@ -57,9 +56,9 @@ namespace CPU_Scheduling.Controllers
                 x.BurstTime = Btime[c];
                 c++;
             }
-            //for (int i = 0; i < tempP; i++)
+            //foreach (var i in p)
             //{
-            //    Output += $"{p[i]}, ";
+            //    Output += $"{i}, ";
             //}
             wt = temp / row;
             tat = temp2 / row;
