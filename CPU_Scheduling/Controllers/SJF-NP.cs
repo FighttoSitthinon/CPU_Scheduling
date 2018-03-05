@@ -17,7 +17,6 @@ namespace CPU_Scheduling.Controllers
             string Output2 = "\n";
             double temp = 0;
             double temp2 = 0;
-            bool key = false;
             int time = 0;
             int count = 0;
             double wt = 0;
@@ -53,7 +52,6 @@ namespace CPU_Scheduling.Controllers
                         break;
                     }
                 }
-                key = false;
             }
             foreach (var x in objList)
             {

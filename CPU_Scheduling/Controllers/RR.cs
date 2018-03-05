@@ -32,35 +32,35 @@ namespace CPU_Scheduling.Controllers
             }
             c = 0;
             string[] p = new string[tempP];
-            while (time < totalTime)
-            {
-                IEnumerable<Obj> queryArrive =
-                    from t in objList
-                    where t.ArriveTime <= time
-                    select t;
-                foreach (var x in queryArrive)
-                {
-                    if (x.BurstTime != 0)
-                    {
-                        p[count] = x.Process;
-                        count++;
-                        temp += time - x.ArriveTime;
-                        time += (x.BurstTime - x.Quantumm);
-                        Output2 += $" - {time}";
-                        temp2 += time - x.ArriveTime;
-                        x.BurstTime = x.BurstTime - x.Quantumm;
-                    }
-                }
-            }
+            //while (time < totalTime)
+            //{
+            //    IEnumerable<Obj> queryArrive =
+            //        from t in objList
+            //        where t.ArriveTime <= time
+            //        select t;
+            //    foreach (var x in queryArrive)
+            //    {
+            //        if (x.BurstTime != 0)
+            //        {
+            //            p[count] = x.Process;
+            //            count++;
+            //            temp += time - x.ArriveTime;
+            //            time += (x.BurstTime - x.Quantumm);
+            //            Output2 += $" - {time}";
+            //            temp2 += time - x.ArriveTime;
+            //            x.BurstTime = x.BurstTime - x.Quantumm;
+            //        }
+            //    }
+            //}
             foreach (var x in objList)
             {
                 x.BurstTime = Btime[c];
                 c++;
             }
-            for (int i = 0; i < tempP; i++)
-            {
-                Output += $"{p[i]}, ";
-            }
+            //for (int i = 0; i < tempP; i++)
+            //{
+            //    Output += $"{p[i]}, ";
+            //}
             wt = temp / row;
             tat = temp2 / row;
             Output2 += $"\n \tWaitting Time : {wt}\n \tTuranaround Time : {tat}";

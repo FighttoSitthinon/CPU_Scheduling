@@ -52,7 +52,6 @@ namespace CPU_Scheduling.Controllers
                         break;
                     }
                 }
-                key = false;
             }
             foreach(var x in objList)
             {
