@@ -12,6 +12,7 @@ namespace CPU_Scheduling.Controllers
         public string SortProcess(List<Obj> objList, int totalTime, int row)
         {
             List<string> p = new List<string>();
+            List<Obj> cQ = new List<Obj>();
             int[] Btime = new int[row];
             string Output = "\t\t";
             string Output2 = "\n";

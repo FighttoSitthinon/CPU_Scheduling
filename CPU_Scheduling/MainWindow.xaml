@@ -6,59 +6,94 @@
         xmlns:local="clr-namespace:CPU_Scheduling"
         mc:Ignorable="d"
         Title="CPU_Scheduling" Height="486.067" Width="519" Background="Cyan">
-    <Grid Background="#FF8BBEB2" Margin="0,0,0,0.333" >
+    <Grid Background="#FF8BBEB2" Margin="0,0,0,-1.333" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="293*"/>
             <ColumnDefinition Width="219*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="160*"/>
-            <RowDefinition/>
+            <RowDefinition Height="457*"/>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Button Content="Calculate" 
+        <Button Content="Input Text" 
                 HorizontalAlignment="Left" 
-                Margin="121.333,38,0,0" 
+                Margin="120.667,24,0,0" 
                 VerticalAlignment="Top" 
                 Width="75" 
-                Height="23" Click="Button_Click" 
+                Height="91" Click="Button_Click" 
                 BorderBrush="Transparent" 
                 Background="#FFBBDBD1" 
                 Grid.Column="1"/>
-        <Button Content="Clear"
+        <Button Content="Clear Text"
                 BorderBrush="Transparent" 
                 Background="#FFBBDBD1" 
-                Width="75" 
-                Height="23" 
-                VerticalAlignment="Top"
-                Grid.Column="1" Margin="120.667,83,23,0"
-                Click="Button_Click_1"></Button>
+                Height="51" 
+                VerticalAlignment="Top" Margin="33.667,64,103,0"
+                Click="Button_Click_1" Grid.Column="1"/>
         <Label Content="Output" 
                HorizontalAlignment="Left" 
-               Margin="27,83,0,0" 
+               Margin="27,127,0,0" 
                VerticalAlignment="Top" Height="26" Width="48" />
         <TextBox x:Name="inputBox" 
                  HorizontalAlignment="Left" 
                  Height="23" 
-                 Margin="27,38,0,0"
+                 Margin="27,24,0,0"
                  TextWrapping="Wrap" Text="Put your url in here." 
                  VerticalAlignment="Top" 
-                 Width="365" BorderBrush="Transparent" Background="#FFD0F4EA" Grid.ColumnSpan="2"/>
+                 Width="375" BorderBrush="Transparent" Background="#FFD0F4EA" Grid.ColumnSpan="2"/>
         <ScrollViewer 
                   HorizontalScrollBarVisibility="Auto" 
-                  VerticalScrollBarVisibility="Auto" Margin="27,129,23,27" Grid.ColumnSpan="2">
+                  VerticalScrollBarVisibility="Auto" Margin="27,164,23,26.667" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <TextBlock x:Name="output" 
                HorizontalAlignment="Left" 
                        Padding="20px"
                Width="769" Background="#FFD0F4EA"
-               TextWrapping="Wrap" Height="1013" VerticalAlignment="Top"
+               TextWrapping="Wrap" Height="982" VerticalAlignment="Top"
                />
         </ScrollViewer>
-        <Button Content="Calculate" 
-            HorizontalAlignment="Left" 
-            Margin="121.333,38,0,0" 
-            VerticalAlignment="Top" 
-            Width="75" 
-            Height="23" Click="Button_Click" BorderBrush="Transparent" Background="#FFBBDBD1" Grid.Column="1"/>
+        <Button Content="PS - NP"
+            BorderBrush="Transparent" 
+            Background="#FFBBDBD1" 
+            Height="23" 
+            VerticalAlignment="Top" Margin="89,64,148.333,0"
+            Click="Button_Click_2"/>
+        <Button Content="FCFS"
+            BorderBrush="Transparent" 
+            Background="#FFBBDBD1" 
+            Height="23" 
+            VerticalAlignment="Top" Margin="27,64,209.333,0"
+            Click="Button_Click_3"/>
+        <Button Content="PS - P"
+            BorderBrush="Transparent" 
+            Background="#FFBBDBD1" 
+            Height="23" 
+            VerticalAlignment="Top" Margin="150,64,87.333,0"
+            Click="Button_Click_4"/>
+        <Button Content="SJF - NP"
+            BorderBrush="Transparent" 
+            Background="#FFBBDBD1" 
+            Height="23" 
+            VerticalAlignment="Top" Margin="27,92,209.333,0"
+            Click="Button_Click_5"/>
+        <Button Content="SJF - P"
+            BorderBrush="Transparent" 
+            Background="#FFBBDBD1" 
+            Height="23" 
+            VerticalAlignment="Top" Margin="89,92,148.333,0"
+            Click="Button_Click_6"/>
+        <Button Content="RR"
+            BorderBrush="Transparent" 
+            Background="#FFBBDBD1" 
+            Height="23" 
+            VerticalAlignment="Top" Margin="150,92,87.333,0"
+            Click="Button_Click_7"/>
+        <Button Content="Analysis Process"
+            BorderBrush="Transparent" 
+            Background="#FFBBDBD1" 
+            Height="51" 
+            VerticalAlignment="Top" Margin="211,64,190,0"
+            Click="Button_Click_8" Grid.ColumnSpan="2"/>
 
 
     </Grid>
