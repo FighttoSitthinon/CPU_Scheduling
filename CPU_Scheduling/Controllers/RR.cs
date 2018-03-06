@@ -53,20 +53,21 @@ namespace CPU_Scheduling.Controllers
                         {
                             cQ.Add(n);
                         }
-                        temp += time - x.ArriveTime;
                         if (x.BurstTime >= x.Quantumm)
                         {
                             time += (x.Quantumm);
                             x.BurstTime -=  x.Quantumm;
-                            x.ArriveTime += x.Quantumm;
                         }
                         else
                         {
                             time += x.BurstTime;
                             x.BurstTime = 0;
-                            x.ArriveTime += x.BurstTime;
                         }
-                        temp2 += (time - x.ArriveTime);
+                        if(x.BurstTime == 0)
+                        {
+                            temp2 += time - x.ArriveTime;
+                            temp = temp2;
+                        }
                         Output2 += $" - {time}";
                         cQ.Add(x);
                         cQ.Remove(x);
@@ -83,7 +84,7 @@ namespace CPU_Scheduling.Controllers
             {
                 Output += $"{i}, ";
             }
-            wt = temp / row;
+            wt = (temp-totalTime) / row;
             tat = temp2  / row;
             Output2 += $"\n \tWaitting Time : {wt}\n \tTuranaround Time : {tat}";
             return Output + Output2;
