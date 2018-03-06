@@ -80,7 +80,8 @@ namespace CPU_Scheduling
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
-
+            var instance7 = new Analysis();
+            //output.Text += $"{instance7.AnalysisResult()}";
         }
     }
 }
