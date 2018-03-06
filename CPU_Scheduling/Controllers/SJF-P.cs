@@ -47,14 +47,9 @@ namespace CPU_Scheduling.Controllers
                         p.Add(x.Process);
                         temp += time - x.ArriveTime;
                         time += x.BurstTime;
-
-                        IEnumerable<Obj> queryP =
-                            from b in objList
-                            where b.ArriveTime <= time
-                            select b;
-                        foreach (var w in queryP)
+                        foreach (var w in queryArrive)
                         {
-                            if (w.BurstTime < x.BurstTime && w.BurstTime != 0)
+                            if (w.BurstTime < x.BurstTime && w.BurstTime > 0)
                             {
                                 x.BurstTime = (time - w.ArriveTime);
                                 temp -= x.BurstTime;
@@ -62,22 +57,12 @@ namespace CPU_Scheduling.Controllers
                                 time -= (x.BurstTime);
                                 temp2 += time - x.ArriveTime;
                                 Output2 += $" - {time}";
-                                if (x.BurstTime > w.BurstTime)
-                                {
-                                    p.Add(w.Process);
-                                    time += w.BurstTime;
-                                    w.BurstTime = 0;
-                                    Output2 += $" - {time}";
-                                    
-                                }
                                 temp2 += time - w.ArriveTime;
                                 x.ArriveTime = w.ArriveTime;
                                 key = true;
                                 break;
                             }
-
                         }
-
                         if (key == false)
                         {
                             x.BurstTime = 0;

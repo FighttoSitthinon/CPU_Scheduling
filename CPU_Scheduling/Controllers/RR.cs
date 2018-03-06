@@ -13,6 +13,7 @@ namespace CPU_Scheduling.Controllers
         {
             List<string> p = new List<string>();
             List<Obj> cQ = new List<Obj>();
+            List<Obj> newObj = new List<Obj>();
             int[] Atime = new int[row];
             int[] Btime = new int[row];
             string Output = "\t\t";
@@ -35,37 +36,53 @@ namespace CPU_Scheduling.Controllers
                     from t in objList
                     where t.ArriveTime <= time
                     select t;
-            
+            IEnumerable<Obj> newArrive =
+                    from t in objList
+                    where t.ArriveTime > time && t.ArriveTime <= time+t.Quantumm  
+                    select t;
+            cQ = queryArrive.OrderBy(x=>x.ArriveTime).ToList();
             while (time < totalTime)
             {
-                cQ = queryArrive.ToList();
+                
                 foreach (var x in cQ)
                 {
                     if (x.BurstTime > 0)
                     {
+                        p.Add(x.Process);
+                        newObj = newArrive.ToList();
+                        foreach(var n in newObj)
+                        {
+                            cQ.Add(n);
+                        }
                         //temp += time - x.ArriveTime;
-                        if(x.BurstTime >= x.Quantumm)
+                        if (x.BurstTime >= x.Quantumm)
                         {
                             time += (x.Quantumm);
                             x.BurstTime -=  x.Quantumm;
                             x.ArriveTime += x.Quantumm;
+                            cQ = queryArrive.ToList();
                         }
                         else
                         {
                             time += x.BurstTime;
                             x.BurstTime = 0;
                             x.ArriveTime += x.BurstTime;
+                            cQ = queryArrive.ToList();
                         }
-                        p.Add(x.Process);
                         Output2 += $" - {time}";
+                        cQ.Add(x);
                         
                         // temp2 += time - x.ArriveTime;
-                        //foreach(var n in cQ)
+                        //foreach (var n in cQ)
                         //{
-                        //    cQ.Add(n);
+                        //    //cQ.Add(n);
                         //}
                         //cQ.Remove(x);
-                    }
+                    } 
+
+                }
+                foreach(var n in cQ)
+                {
 
                 }
             }
