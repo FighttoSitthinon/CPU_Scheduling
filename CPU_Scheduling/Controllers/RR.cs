@@ -16,35 +16,34 @@ namespace CPU_Scheduling.Controllers
             List<Obj> newObj = new List<Obj>();
             int[] Atime = new int[row];
             int[] Btime = new int[row];
-            string Output = "\t\t";
+            string Output = "\t";
             string Output2 = "\n";
             double temp = 0;
             double temp2 = 0;
             int time = 0;
             double wt = 0;
             double tat = 0;
-            Output2 += $"\tTime : {time}";
+            Output2 += $"\tTime : \t{time}";
             int c = 0;
-            foreach (var x in objList)
+            foreach (var x in objList) //backup data
             {
                 Btime[c] = x.BurstTime;
                 Atime[c] = x.ArriveTime;
                 c++;
             }
             c = 0;
-            IEnumerable<Obj> queryArrive =
+            IEnumerable<Obj> queryArrive = //Get first process
                     from t in objList
                     where t.ArriveTime <= time
                     select t;
-            IEnumerable<Obj> newArrive =
+            IEnumerable<Obj> newArrive = //Check new process in that moment
                     from t in objList
                     where t.ArriveTime > time && t.ArriveTime <= time+t.Quantumm  
                     select t;
             cQ = queryArrive.OrderBy(x=>x.ArriveTime).ToList();
             while (time < totalTime)
             {
-                
-                foreach (var x in cQ)
+                foreach (var x in cQ.ToList())
                 {
                     if (x.BurstTime > 0)
                     {
@@ -54,36 +53,24 @@ namespace CPU_Scheduling.Controllers
                         {
                             cQ.Add(n);
                         }
-                        //temp += time - x.ArriveTime;
+                        temp += time - x.ArriveTime;
                         if (x.BurstTime >= x.Quantumm)
                         {
                             time += (x.Quantumm);
                             x.BurstTime -=  x.Quantumm;
                             x.ArriveTime += x.Quantumm;
-                            cQ = queryArrive.ToList();
                         }
                         else
                         {
                             time += x.BurstTime;
                             x.BurstTime = 0;
                             x.ArriveTime += x.BurstTime;
-                            cQ = queryArrive.ToList();
                         }
+                        temp2 += time - x.ArriveTime;
                         Output2 += $" - {time}";
                         cQ.Add(x);
-                        
-                        // temp2 += time - x.ArriveTime;
-                        //foreach (var n in cQ)
-                        //{
-                        //    //cQ.Add(n);
-                        //}
-                        //cQ.Remove(x);
-                    } 
-
-                }
-                foreach(var n in cQ)
-                {
-
+                        cQ.Remove(x);
+                    }
                 }
             }
             foreach (var x in objList)
