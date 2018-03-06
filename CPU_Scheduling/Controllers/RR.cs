@@ -66,7 +66,7 @@ namespace CPU_Scheduling.Controllers
                             x.BurstTime = 0;
                             x.ArriveTime += x.BurstTime;
                         }
-                        temp2 += time - x.ArriveTime;
+                        temp2 += (time - x.ArriveTime);
                         Output2 += $" - {time}";
                         cQ.Add(x);
                         cQ.Remove(x);
@@ -84,7 +84,7 @@ namespace CPU_Scheduling.Controllers
                 Output += $"{i}, ";
             }
             wt = temp / row;
-            tat = temp2 / row;
+            tat = temp2  / row;
             Output2 += $"\n \tWaitting Time : {wt}\n \tTuranaround Time : {tat}";
             return Output + Output2;
         }
