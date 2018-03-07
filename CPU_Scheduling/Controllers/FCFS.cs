@@ -9,7 +9,7 @@ namespace CPU_Scheduling.Controllers
 {
     class FCFS
     {
-        public string SortProcess(List<Obj> objList, int row)
+        public string SortProcess(List<Obj> objList, int row, List<Result> result)
         {
             var List = objList.OrderBy(x => x.ArriveTime).ToList();
             string Output="\t ";
@@ -33,6 +33,7 @@ namespace CPU_Scheduling.Controllers
             }
             Wt = temp / row;
             tat = temp2 / row;
+            result.Add(new Result("FCFS", Wt, tat));
             Output += $"\n \tWaitting Time : {Wt}\n \tTuranaround Time : {tat}";
             return Output;
         }

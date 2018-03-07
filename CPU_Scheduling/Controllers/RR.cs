@@ -9,7 +9,7 @@ namespace CPU_Scheduling.Controllers
 {
     class RR
     {
-        public string SortProcess(List<Obj> objList, int totalTime, int row)
+        public string SortProcess(List<Obj> objList, int totalTime, int row, List<Result> result)
         {
             List<string> p = new List<string>();
             List<Obj> cQ = new List<Obj>();
@@ -86,6 +86,7 @@ namespace CPU_Scheduling.Controllers
             }
             wt = (temp-totalTime) / row;
             tat = temp2  / row;
+            result.Add(new Result("RR", wt, tat));
             Output2 += $"\n \tWaitting Time : {wt}\n \tTuranaround Time : {tat}";
             return Output + Output2;
         }

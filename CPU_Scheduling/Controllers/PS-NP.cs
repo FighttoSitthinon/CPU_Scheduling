@@ -9,7 +9,7 @@ namespace CPU_Scheduling.Controllers
 {
     class PS_NP
     {
-        public string SortProcess(List<Obj> objList,int totalTime,int row)
+        public string SortProcess(List<Obj> objList,int totalTime,int row, List<Result> result)
         {
             List<string> p = new List<string>();
             int[] Btime = new int[row];
@@ -62,6 +62,7 @@ namespace CPU_Scheduling.Controllers
             }
             wt = temp / row;
             tat = temp2 / row;
+            result.Add(new Result("PS-NP", wt, tat));
             Output2 += $"\n \tWaitting Time : {wt}\n \tTuranaround Time : {tat}";
             return Output+Output2 ;
         }

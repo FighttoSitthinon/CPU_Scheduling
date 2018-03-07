@@ -15,6 +15,7 @@ namespace CPU_Scheduling
             InitializeComponent();
         }
         List<Obj> ObjList = new List<Obj>();
+        List<Result> result = new List<Result>();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string url = inputBox.Text;
@@ -35,7 +36,7 @@ namespace CPU_Scheduling
                 row ++;
             }
         }
-
+        
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             output.Text = null;
@@ -45,43 +46,57 @@ namespace CPU_Scheduling
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             var instance2 = new PS_NP();
-            output.Text += $"\n\n Priority Scheduling : {instance2.SortProcess(ObjList, totalTime, row)}";
+            output.Text += $"\n\n Priority Scheduling : {instance2.SortProcess(ObjList, totalTime, row, result)}";
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             var instance1 = new FCFS();
-            output.Text += $"\n\n First Come First Serve : {instance1.SortProcess(ObjList, row)}";
+            output.Text += $"\n\n First Come First Serve : {instance1.SortProcess(ObjList, row, result)}";
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             var instance5 = new PS_P();
-            output.Text += $"\n\n Priority Scheduling (Preemptive) : {instance5.SortProcess(ObjList, totalTime, row)}";
+            output.Text += $"\n\n Priority Scheduling (Preemptive) : {instance5.SortProcess(ObjList, totalTime, row, result)}";
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
             var instance3 = new SJF_NP();
-            output.Text += $"\n\n First Job Search : {instance3.SortProcess(ObjList, totalTime, row)}";
+            output.Text += $"\n\n First Job Search : {instance3.SortProcess(ObjList, totalTime, row, result)}";
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             var instance6 = new SJF_P();
-            output.Text += $"\n\n First Job Search (Preemptive) : {instance6.SortProcess(ObjList, totalTime, row)}";
+            output.Text += $"\n\n First Job Search (Preemptive) : {instance6.SortProcess(ObjList, totalTime, row, result)}";
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             var instance4 = new RR();
-            output.Text += $"\n\n Round Robin : {instance4.SortProcess(ObjList, totalTime, row)}";
+            output.Text += $"\n\n Round Robin : {instance4.SortProcess(ObjList, totalTime, row, result)}";
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
+            var instance1 = new FCFS();
+            instance1.SortProcess(ObjList, row, result);
+            var instance2 = new PS_NP();
+            instance2.SortProcess(ObjList, totalTime, row, result);
+            var instance3 = new SJF_NP();
+            instance3.SortProcess(ObjList, totalTime, row, result);
+            var instance4 = new RR();
+            instance4.SortProcess(ObjList, totalTime, row, result);
+            var instance5 = new PS_P();
+            instance5.SortProcess(ObjList, totalTime, row, result);
+            var instance6 = new SJF_P();
+            instance6.SortProcess(ObjList, totalTime, row, result);
             var instance7 = new Analysis();
-            //output.Text += $"{instance7.AnalysisResult()}";
+            output.Text += $"\n\n============== Anatysis All Algorithm ==============\n";
+            output.Text += $"{instance7.AnalysisResult(result)}";
+            output.Text += $"\n\n===========================================\n";
         }
     }
 }

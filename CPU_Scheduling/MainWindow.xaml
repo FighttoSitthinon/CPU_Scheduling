@@ -49,7 +49,7 @@
                HorizontalAlignment="Left" 
                        Padding="20px"
                Width="769" Background="#FFD0F4EA"
-               TextWrapping="Wrap" Height="982" VerticalAlignment="Top"
+               TextWrapping="Wrap" Height="1234" VerticalAlignment="Top"
                />
         </ScrollViewer>
         <Button Content="PS - NP"
