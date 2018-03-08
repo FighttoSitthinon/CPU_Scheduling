@@ -8,8 +8,8 @@ namespace CPU_Scheduling
 {
     public partial class MainWindow : Window
     {
-        int totalTime = 0;
-        int row = 0;
+        int totalTime;
+        int row;
         public MainWindow()
         {
             InitializeComponent();
@@ -18,6 +18,10 @@ namespace CPU_Scheduling
         List<Result> result = new List<Result>();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            output.Text = null;
+            ObjList.Clear();
+            totalTime = 0;
+            row = 0;
             string url = inputBox.Text;
             string[] lines = System.IO.File.ReadAllLines(url);
             string[] word;
@@ -39,6 +43,8 @@ namespace CPU_Scheduling
         
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            totalTime = 0;
+            row = 0;
             output.Text = null;
             ObjList.Clear();
         }
