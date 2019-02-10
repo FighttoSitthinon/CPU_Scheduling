@@ -3,7 +3,7 @@
     <p>You can create text file for input data to program like this</p>
 <p>"Process" (Space) "Arrive Time" (Space) "Burst Time" (Space) "Priority" (Space) "Quantum Time"</p>
 <p>Example:</p>
-<p><blockquote class="imgur-embed-pub" lang="en" data-id="YKTGoZA"><a href="//imgur.com/YKTGoZA">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script></p>
+<p><a href="//imgur.com/YKTGoZA"><img src="https://imgur.com/YKTGoZA"></img></a></p>
     <p>After that you need to copy url your text file and paste to Inputbox in program.</p>
     <p>When you click Button "Input Text" Program will be read text file.</p>
     <p>If you click any algorithm button program will calculate and show output in outputbox.</p>
