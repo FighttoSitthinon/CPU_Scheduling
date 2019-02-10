@@ -21,7 +21,7 @@ namespace CPU_Scheduling.Controllers
             double tat = 0;
             foreach (var i in List)
             {
-                Output += $"{i.Process}, "; 
+                Output += $"=> {i.Process} "; 
             }
             Output += $"\n \tTime : {start}";
             foreach (var i in List)

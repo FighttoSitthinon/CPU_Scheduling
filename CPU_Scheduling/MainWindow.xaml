@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPU_Scheduling"
         mc:Ignorable="d"
-        Title="CPU_Scheduling" Height="486.067" Width="519" Background="Cyan">
+        Title="CPU_Scheduling" Height="486.067" Width="519" Background="Cyan" ResizeMode="NoResize">
     <Grid Background="#FF8BBEB2" Margin="0,0,0,-1.333" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="293*"/>
@@ -16,14 +16,15 @@
             <RowDefinition Height="48*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Button Content="Input Text" 
+
+        <Button Content="Import File" 
                 HorizontalAlignment="Left" 
                 Margin="120.667,24,0,0" 
                 VerticalAlignment="Top" 
                 Width="75" 
                 Height="91" Click="Button_Click" 
                 BorderBrush="Transparent" 
-                Background="#FFBBDBD1" 
+                Background="LightYellow" 
                 Grid.Column="1"/>
         <Button Content="Clear Text"
                 BorderBrush="Transparent" 
@@ -37,9 +38,11 @@
                VerticalAlignment="Top" Height="26" Width="48" />
         <TextBox x:Name="inputBox" 
                  HorizontalAlignment="Left" 
-                 Height="23" 
+                 Height="26" 
                  Margin="27,24,0,0"
-                 TextWrapping="Wrap" Text="Put your url in here." 
+                 Padding="10,3,0,0"
+                 TextWrapping="Wrap" Text="Please import your file." 
+                 IsReadOnly="True"
                  VerticalAlignment="Top" 
                  Width="375" BorderBrush="Transparent" Background="#FFD0F4EA" Grid.ColumnSpan="2"/>
         <ScrollViewer 
@@ -94,7 +97,5 @@
             Height="51" 
             VerticalAlignment="Top" Margin="211,64,190,0"
             Click="Button_Click_8" Grid.ColumnSpan="2"/>
-
-
     </Grid>
 </Window>

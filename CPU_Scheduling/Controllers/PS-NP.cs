@@ -31,7 +31,7 @@ namespace CPU_Scheduling.Controllers
             c = 0;
             while (time < totalTime)
             {
-                IEnumerable<Obj> queryArrive =
+                var queryArrive =
                     from t in objList
                     where t.ArriveTime <= time
                     select t;//จับส่งไป sort เลือกเอาน้อยสุด พอ p ใหม่เข้ามาเอาที่ยังไม่เลือกไป sort
@@ -58,7 +58,7 @@ namespace CPU_Scheduling.Controllers
             }
             foreach (var i in p)
             {
-                Output += $"{i}, ";
+                Output += $"=> {i} ";
             }
             wt = temp / row;
             tat = temp2 / row;

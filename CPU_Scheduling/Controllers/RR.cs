@@ -32,11 +32,11 @@ namespace CPU_Scheduling.Controllers
                 c++;
             }
             c = 0;
-            IEnumerable<Obj> queryArrive = //Get first process
+            var queryArrive = //Get first process
                     from t in objList
                     where t.ArriveTime <= time
                     select t;
-            IEnumerable<Obj> newArrive = //Check new process in that moment
+            var newArrive = //Check new process in that moment
                     from t in objList
                     where t.ArriveTime > time && t.ArriveTime <= time+t.Quantumm  
                     select t;
@@ -82,7 +82,7 @@ namespace CPU_Scheduling.Controllers
             }
             foreach (var i in p)
             {
-                Output += $"{i}, ";
+                Output += $"=> {i} ";
             }
             wt = (temp-totalTime) / row;
             tat = temp2  / row;
