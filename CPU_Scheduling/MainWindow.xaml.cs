@@ -23,7 +23,8 @@ namespace CPU_Scheduling
             ObjList.Clear();
             totalTime = 0;
             row = 0;
-            
+            bool key = true;
+
             //import file by dialog.
             // Create OpenFileDialog 
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
@@ -46,9 +47,9 @@ namespace CPU_Scheduling
             }
 
             //validate url
-            url = inputBox.Text == "Please import your file."? null: inputBox.Text;
+            url = inputBox.Text == "Please import your file." ? null : inputBox.Text;
 
-            if(url == null)
+            if (url == null)
             {
                 //Alert msg
                 MessageBox.Show("Please import file.");
@@ -59,21 +60,43 @@ namespace CPU_Scheduling
                 string[] lines = System.IO.File.ReadAllLines(url);
                 string[] word;
 
-                output.Text = "Process" + "\t" + "Arrive" + "\t" + "Brust" + "\t" + "Priority" + "\t" + "Quantumm";
-
-                foreach (string line in lines)
+                if (lines.Length == 0)
                 {
-                    word = line.Split(' ');
-                    ObjList.Add(new Obj(word[0], Int32.Parse(word[1]), Int32.Parse(word[2]), Int32.Parse(word[3]), Int32.Parse(word[4])));
+                    //If txt file don't have data.
+                    MessageBox.Show("Please check your data again.");
                 }
-                foreach (Obj Obj in ObjList)
+                else
                 {
-                    output.Text += $"\n{Obj.Process}\t{Obj.ArriveTime}\t{Obj.BurstTime}\t{Obj.Priority}\t{Obj.Quantumm}";
-                    totalTime += Obj.BurstTime;
-                    row++;
+                    //If txt file have data
+                    foreach (string line in lines)
+                    {
+                        word = line.Split(' ');
+                        try
+                        {
+                            ObjList.Add(new Obj(word[0], Int32.Parse(word[1]), Int32.Parse(word[2]), Int32.Parse(word[3]), Int32.Parse(word[4])));
+                        }
+                        catch
+                        {
+                            // If data type wrong or data missing in col.
+                            MessageBox.Show($"Something wrong! in Process {word[0]} please check your data again.");
+                            key = false;
+                            clearData();
+                        }
+                    }
+                    if (key == true)
+                    {
+                        //Show data in txt file
+                        output.Text = "Process" + "\t" + "Arrive" + "\t" + "Brust" + "\t" + "Priority" + "\t" + "Quantumm";
+
+                        foreach (Obj Obj in ObjList)
+                        {
+                            output.Text += $"\n{Obj.Process}\t{Obj.ArriveTime}\t{Obj.BurstTime}\t{Obj.Priority}\t{Obj.Quantumm}";
+                            totalTime += Obj.BurstTime;
+                            row++;
+                        }
+                    }
                 }
             }
-          
         }
         
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -86,12 +109,7 @@ namespace CPU_Scheduling
             }
             else
             {
-                totalTime = 0;
-                row = 0;
-                output.Text = null;
-                url = null;
-                inputBox.Text = "Please import your file.";
-                ObjList.Clear();
+                clearData();
             }
         }
 
@@ -205,6 +223,16 @@ namespace CPU_Scheduling
                 output.Text += $"{instance7.AnalysisResult(result)}";
                 output.Text += $"\n\n===========================================\n";
             }
+        }
+
+        public void clearData()
+        {
+            totalTime = 0;
+            row = 0;
+            output.Text = null;
+            url = null;
+            inputBox.Text = "Please import your file.";
+            ObjList.Clear();
         }
         
     }
