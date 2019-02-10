@@ -3,7 +3,7 @@
     <p>You can create text file for input data to program like this</p>
 <p>"Process" (Space) "Arrive Time" (Space) "Burst Time" (Space) "Priority" (Space) "Quantum Time"</p>
 <p>Example:</p>
-<p><img src="https://www.img.in.th/images/064d0283373868c77dfa0b0755c6d85b.png" alt="064d0283373868c77dfa0b0755c6d85b.png" border="0" /></p>
+<p><blockquote class="imgur-embed-pub" lang="en" data-id="YKTGoZA"><a href="//imgur.com/YKTGoZA">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script></p>
     <p>After that you need to copy url your text file and paste to Inputbox in program.</p>
     <p>When you click Button "Input Text" Program will be read text file.</p>
     <p>If you click any algorithm button program will calculate and show output in outputbox.</p>
@@ -14,4 +14,8 @@
     <p>- Priority Scheduling (non-preemptive)</p>
     <p>- Priority Scheduling (preemptive)</p>
     <p>- Round Robin</p>
-    <a href="https://www.img.in.th/image/uhocj2"><img src="https://www.img.in.th/images/1473a0b934e4e926b7774a0859f53d60.png" alt="1473a0b934e4e926b7774a0859f53d60.png" border="0" /></a>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="mZMEDMr"><a href="//imgur.com/mZMEDMr">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+	<blockquote class="imgur-embed-pub" lang="en" data-id="nEqA4Px"><a href="//imgur.com/nEqA4Px">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+	<blockquote class="imgur-embed-pub" lang="en" data-id="z23irB7"><a href="//imgur.com/z23irB7">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+	<h2>Test Data</h2>
+	<blockquote class="imgur-embed-pub" lang="en" data-id="LQAfaLn"><a href="//imgur.com/LQAfaLn">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>

@@ -5,6 +5,15 @@ VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPU_Scheduling", "CPU_Scheduling\CPU_Scheduling.csproj", "{36327816-70D2-4AC4-901A-38A70FC1F654}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B173B0F2-72FD-4CCD-8AEA-5F775B67278F}"
+	ProjectSection(SolutionItems) = preProject
+		imgForReadMe\01.PNG = imgForReadMe\01.PNG
+		imgForReadMe\02.PNG = imgForReadMe\02.PNG
+		imgForReadMe\03.PNG = imgForReadMe\03.PNG
+		imgForReadMe\04.PNG = imgForReadMe\04.PNG
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
