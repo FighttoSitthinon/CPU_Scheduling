@@ -3,7 +3,8 @@
     <p>You can create text file for input data to program like this</p>
 <p>"Process" (Space) "Arrive Time" (Space) "Burst Time" (Space) "Priority" (Space) "Quantum Time"</p>
 <p>Example:</p>
-<p><a href="//imgur.com/YKTGoZA"><img src="https://imgur.com/YKTGoZA"></img></a></p>
+<p>    <img src="https://www.img.in.th/images/b0017641b07ed9ed5da8c455244c8a71.png" alt="b0017641b07ed9ed5da8c455244c8a71.png" border="0"></p>
+
     <p>After that you need to copy url your text file and paste to Inputbox in program.</p>
     <p>When you click Button "Input Text" Program will be read text file.</p>
     <p>If you click any algorithm button program will calculate and show output in outputbox.</p>
@@ -14,8 +15,10 @@
     <p>- Priority Scheduling (non-preemptive)</p>
     <p>- Priority Scheduling (preemptive)</p>
     <p>- Round Robin</p>
-    <blockquote class="imgur-embed-pub" lang="en" data-id="mZMEDMr"><a href="//imgur.com/mZMEDMr">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-	<blockquote class="imgur-embed-pub" lang="en" data-id="nEqA4Px"><a href="//imgur.com/nEqA4Px">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-	<blockquote class="imgur-embed-pub" lang="en" data-id="z23irB7"><a href="//imgur.com/z23irB7">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+<img src="https://www.img.in.th/images/3a305908a5a7e93e203f91e4bff350ce.png" alt="3a305908a5a7e93e203f91e4bff350ce.png" border="0">
+<img src="https://www.img.in.th/images/130e6979849be88e733c160384098bfa.png" alt="130e6979849be88e733c160384098bfa.png" border="0">
+<img src="https://www.img.in.th/images/a665dda764c41f4e001014c0e278f75d.png" alt="a665dda764c41f4e001014c0e278f75d.png" border="0">
 	<h2>Test Data</h2>
-	<blockquote class="imgur-embed-pub" lang="en" data-id="LQAfaLn"><a href="//imgur.com/LQAfaLn">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<img src="https://www.img.in.th/images/15aa2b0e3c072b062592430524a05d29.png" alt="15aa2b0e3c072b062592430524a05d29.png" border="0">
+
