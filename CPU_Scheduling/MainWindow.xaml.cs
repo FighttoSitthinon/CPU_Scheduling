@@ -222,6 +222,7 @@ namespace CPU_Scheduling
                 output.Text += $"\n\n============== Anatysis All Algorithm ==============\n";
                 output.Text += $"{instance7.AnalysisResult(result)}";
                 output.Text += $"\n\n===========================================\n";
+                result = new List<Result>();
             }
         }
 
